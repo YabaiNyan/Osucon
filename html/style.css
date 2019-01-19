@@ -23,24 +23,17 @@ body{
     text-align: center;
 }
 
-@media screen and (orientation:portrait) { 
-    tr{
-        height: calc(100vw/4);
-    }
-    td{
-        height: calc(100vw/4);
-        width: calc(100vw/4);
-    }
+.container {
+	text-align: center;
 }
 
-@media screen and (orientation:landscape) { 
-    tr{
-        height: calc(100vh/4);
-    }
-    td{
-        height: calc(100vh/4);
-        width: calc(100vh/4);
-    }
+tr{
+    height: calc(100vh);
+}
+
+td{
+    height: calc(100vh);
+    width: calc(100vw);
 }
 
 .bt-btn{
@@ -49,8 +42,4 @@ body{
     width: 100%;
     background-image: url("idle.png");
     background-size: cover;
-}
-
-.container {
-	text-align: center;
 }

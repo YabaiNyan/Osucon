@@ -13,61 +13,13 @@
 <body>
     <div class="container">
         <table align="center">
-            <tbody ontouchstart="handletouch(event)" ontouchmove="handletouch(event)" ontouchend="touchleave(event)" ontouchcancel="touchleave(event)">
+            <tbody>
                 <tr>
                     <td>
-                        <button id="1" value="1" class="bt-btn"></button>
+                        <button class="bt-btn" ontouchstart="btdown('z', this)" ontouchend="btup('z', this)" ontouchcancel="btup('z', this)"></button>
                     </td>
                     <td>
-                        <button id="2" value="2" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="3" value="3" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="4" value="4" class="bt-btn"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="q" value="q" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="w" value="w" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="e" value="e" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="r" value="r" class="bt-btn"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="a" value="a" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="s" value="s" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="d" value="d" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="f" value="f" class="bt-btn"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="z" value="z" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="x" value="x" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="c" value="c" class="bt-btn"></button>
-                    </td>
-                    <td>
-                        <button id="v" value="v" class="bt-btn"></button>
+                        <button class="bt-btn" ontouchstart="btdown('x', this)" ontouchend="btup('x', this)" ontouchcancel="btup('x', this)"></button>   
                     </td>
                 </tr>
             </tbody>
