@@ -2,7 +2,10 @@
 Web Controller for Osu
 
 # Quick Setup for Windows
-Goto the [releases page](https://github.com/YabaiNyan/Osucon/releases/latest "Click here to goto the releases page") and download osucon.exe and robotjs.node. Run osucon.exe and connect to the address in the console on a mobile device.</br>
+1) Goto the [releases page](https://github.com/YabaiNyan/Osucon/releases/latest "Click here to goto the releases page") and download `osucon.exe` and `robotjs.node`.
+2) Put all files in the same folder and run osucon.exe
+3) Then connect to the address in the console on a mobile device.
+
 To set custom keys, download osucon.config from the [releases page](https://github.com/YabaiNyan/Osucon/releases/latest "Click here to goto the releases page") and replace `a` in `KEY1=a` and `s` in `KEY2=s` with your corresponding keys.
 
 # Installation for development
