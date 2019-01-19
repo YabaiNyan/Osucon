@@ -4,6 +4,8 @@ var connect = require('connect');
 var serveStatic = require('serve-static');
 const WebSocket = require('ws');
 var os = require('os');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(process.cwd(), 'osucon.config') })
 
 //package configs
 robot.setKeyboardDelay(1);
@@ -12,6 +14,21 @@ const wss = new WebSocket.Server({ port: 1337 });
 //true or false if connection is active
 var activeconnection = false;
 var activedevice = '';
+
+//keyconfig
+var keydict = {
+    z:'z',
+    x:'x'
+}
+
+if(process.env.KEY1 != undefined && process.env.KEY2 != undefined){
+    if(process.env.KEY1.length == 1 && process.env.KEY2.length == 1){
+        var keydict = {
+            z: process.env.KEY1.toLowerCase(),
+            x: process.env.KEY2.toLowerCase()
+        }
+    }
+}
 
 //html sever
 connect().use(serveStatic(__dirname+"/html")).listen(8080, function(){
@@ -53,9 +70,9 @@ wss.on('connection', function connection(ws, req) {
         }else if(!message.startsWith("=")){
             var splitmsg = message.split("")
             if(splitmsg[0] == "<"){
-                robot.keyToggle(splitmsg[1], 'down')
+                robot.keyToggle(keydict[splitmsg[1]], 'down')
             }else{
-                robot.keyToggle(splitmsg[1], 'up')
+                robot.keyToggle(keydict[splitmsg[1]], 'up')
             }
         }
     });
