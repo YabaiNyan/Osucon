@@ -1,0 +1,26 @@
+{
+  "name": "osu",
+  "version": "1.0.0",
+  "description": "web controller for osu",
+  "main": "osucon.js",
+  "dependencies": {
+    "connect": "^3.6.6",
+    "robotjs": "^0.5.1",
+    "serve-static": "^1.13.2",
+    "ws": "^6.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node osucon.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YabaiNyan/Osucon.git"
+  },
+  "author": "YabaiNyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YabaiNyan/Osucon/issues"
+  },
+  "homepage": "https://github.com/YabaiNyan/Osucon#readme"
+}
