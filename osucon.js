@@ -48,22 +48,25 @@ wss.on('connection', function connection(ws, req) {
     activedevice = req.connection.remoteAddress
     console.log("Connection established from device "+req.connection.remoteAddress)
     
-    ws.send("==")
+    clearTimeout(connecttimeout);
     var connecttimeout = setTimeout(function(){
         failtimeout();
     }, 1000)
+    ws.send("==")
 
     ws.on('message', function incoming(message) {
         if(message == "=="){
-            clearTimeout(connecttimeout);
-            connecttimeout = setTimeout(function(){
-                failtimeout();
-            }, 1000)
-            setTimeout(function(){
-                if(ws.readyState != ws.CLOSED){
-                    ws.send("==")
-                }
-            }, 250)
+            if(activeconnection){
+                clearTimeout(connecttimeout);
+                connecttimeout = setTimeout(function(){
+                    failtimeout();
+                }, 1000)
+                setTimeout(function(){
+                    if(ws.readyState != ws.CLOSED){
+                        ws.send("==")
+                    }
+                }, 100)
+            }
         }
         if(message.startsWith("!")){
             console.log(message)

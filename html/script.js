@@ -1,12 +1,17 @@
 var firstfail = true;
 var refused = false;
-var ws;
+var ws, connecttimeout;
 
 function connect(){
     setTimeout(function(){
         ws = new WebSocket('ws://' + window.location.hostname + ':1337');
         ws.onopen = function(){
             document.getElementById("cover").style.display = "none";
+            clearTimeout(connecttimeout);
+            connecttimeout = setTimeout(function(){
+                failtimeout();
+                return;
+            }, 1000)
             ws.onmessage = function (event) {
                 switch(event.data){
                     case "==":
@@ -19,7 +24,7 @@ function connect(){
                             if(ws.readyState != ws.CLOSED){
                                 ws.send("==")
                             }
-                        },250)
+                        }, 100)
                     break
                     case "err01":
                         refused = true;
@@ -31,10 +36,6 @@ function connect(){
                 }
             };
         }
-        connecttimeout = setTimeout(function(){
-            failtimeout();
-            return;
-        }, 1000)
     },1000)
 }
 
@@ -83,7 +84,7 @@ function connectionrefused(){
     var h12 = document.createElement("H1");
     var textnode2 = document.createTextNode("Reload page to attempt to reconnect.");
     h12.style.color = "white";
-    h12.appendChild(textnode);
+    h12.appendChild(textnode2);
     document.getElementById("cover").appendChild(h1); 
     document.getElementById("cover").appendChild(h12); 
     document.getElementById("wrapper").remove();
