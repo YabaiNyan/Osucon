@@ -2,7 +2,7 @@
 Web Controller for Osu
 
 # Installation
-You'll need to first install [nodeJS](https://nodejs.org/en/download/ "Click here to goto the nodeJS download page") on the computer you plan to use this on.</br>
+You'll need to first install [nodeJS](https://nodejs.org/en/download/ "Click here to goto the nodeJS download page") and [Python 2.7.x](https://www.python.org/downloads/release/python-2715/ "Click here to goto the Python download page") on the computer you plan to use this on.</br>
 
 Then open a terminal and type</br> 
 ```git clone https://github.com/YabaiNyan/osucon.git```</br>
