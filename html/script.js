@@ -13,7 +13,7 @@ function btdown(key, e, ele){
 
 function btup(key, e, ele){
     if(e.targetTouches.length == 0){
-        ws.send(">"+key)zzzzzzzz
+        ws.send(">"+key)
         ele.style.backgroundImage="url('idle.png')"
     }
 }

@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "web controller for osu",
   "main": "osucon.js",
+  "bin": "osucon.js",
+  "pkg": {
+    "scripts": "*.js",
+    "assets": "html",
+    "targets": [
+      "node10-win-x64"
+    ]
+  },
   "dependencies": {
     "connect": "^3.6.6",
     "robotjs": "^0.5.1",
