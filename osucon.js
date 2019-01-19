@@ -31,8 +31,6 @@ wss.on('connection', function connection(ws) {
   });
 });
 
-
-
 //getipv4
 function getipv4(){
   var ifaces = os.networkInterfaces();
